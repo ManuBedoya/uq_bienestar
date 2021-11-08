@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property label="Nombre Primer Componente" name="nombrePrimerComponente" type="String"/>
+            <property label="Nombre Segundo Componente" name="nombreSegundoComponente" type="String"/>
+            <property label="Api Name Primer Imagen" name="imagenPrimerSVG_api" type="String"/>
+            <property label="Api Name segunda Imagen" name="imagenSegundoSVG_api" type="String"/>
+            <property label="Redireccionar primer componente" name="redirectPrimerComponente_api" type="String"/>
+            <property label="Redireccionar segundo componente" name="redirectSegundoComponente_api" type="String"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

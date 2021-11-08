@@ -1,0 +1,258 @@
+<template>
+    <div class="slds-grid slds-wrap" >
+        
+            <div class="slds-col slds-large-size_9-of-12 slds-medium-size_12-of-12 slds-size_12-of-12" >
+                    <a onclick={handleIrAtras} class="div-icn-atras"> 
+                        <lightning-icon class="slds-m-vertical  irAtras-icn" 
+                        icon-name="utility:back" 
+                        alternative-text="Ir atras"
+                        variant="inverse" 
+                        title="Ir atras"></lightning-icon>
+                        <p class="Atras-p" >Ir atras</p>
+                    </a>          
+            </div>   
+            <!--
+            <div class="slds-col slds-large-size_3-of-12 slds-medium-size_12-of-12 slds-size_12-of-12" >
+                 <div class="div_boton" >
+                    <button  class="slds-button slds-button_brand slds-button_stretch botonesCyE" 
+                            title="Citas agendadas" 
+                            onclick={handleCitasAgendadas}>
+                    Citas agendadas
+                    </button>          
+                </div>
+            </div>-->
+      
+    </div>
+    <div class="slds-col">
+        <div class="slds-card card slds-p-around_small slds-m-bottom_medium">
+            <div class="slds-grid slds-grid_vertical slds-grid_vertical-align-center">
+                <div class="slds-col slds-size_full notas-header slds-m-bottom_small">
+                    <div class="slds-grid slds-gutters_x-small slds-grid_align-start slds-grid_vertical-align-center">
+                        <div class="slds-col slds-grow-none notas-icon slds-p-around--none">
+                            <lightning-icon class="slds-m-around_x-small"
+                                icon-name="utility:graph" alternative-text="Notas"
+                                variant="inverse" title="Notas"></lightning-icon>
+                        </div>
+                        <div class="slds-col slds-grow-none notas-label">
+                            Citas Disponibles Psicología Uniquindio
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters slds-size_12-of-12">
+                    
+                    <template if:true={SedeVisible}>
+                        <div class="slds-col   slds-size_5-of-12" >
+                            <!-- lugar -->
+                            <template if:true={urlIdSede}>
+                                <lightning-combobox name="Asignatura"  
+                                    value={siteSelecionado} placeholder="Selecciona el lugar" label="Lugar" required
+                                    options={lugarOptiones} onchange={hanledChangeLugar}>
+                                </lightning-combobox>
+                            </template>
+                </div>
+                    
+                
+                <template if:true={urlIdSede}>
+                    <!-- {tableVisible}
+                    <div class="slds-col  slds-size_4-of-12">
+                        <lightning-combobox name="Asignatura"  
+                            value={especialidadSeleccionada} placeholder="Selecciona la especialidad" label="Especialidad"
+                            options={especialidadOptiones} onchange={hanledChangeEspecialidad} required>
+                        </lightning-combobox>
+                    </div>
+
+                    <div class="slds-col slds-size_4-of-12">
+                        <lightning-combobox name="Asignatura" 
+                            value={profesionalSelecionado} placeholder="Selecciona el Profesional" label="Profesional"
+                            options={profesionalOptiones} onchange={hanledChangeProfesional}>
+                        </lightning-combobox>
+                    </div> -->
+
+                    <div class="slds-col slds-size_5-of-12">
+                        <lightning-input 
+                            type="date"
+                            label="Fecha"
+                            placeholder="Fecha"
+                            value={fechaSelecionada}
+                            onchange={hanledChangeFecha}
+                            required>
+                        </lightning-input>
+                    </div>
+           
+                </template> 
+                    
+            </template>
+                </div>
+                <template if:true={SedeVisible}>
+                    <div class="slds-grid slds-gutters_x-small slds-grid_vertical-align-center slds-size_12-of-12 consultar-btn" >
+                        <div class="slds-col slds-size_12-of-12 slds-text-align_center">
+                            <lightning-button class="slds-text-align_center"
+                            variant="brand"
+                            label="Consultar"
+                            title="Consultar"
+                            onclick={HanledConsultarCitasDisponibles}>
+                            </lightning-button>
+                        </div>
+                    </div>
+                </template>
+                
+                <template  if:true={alertVisible}>
+                    <div class="slds-grid slds-gutters_x-small  slds-size_12-of-12 " >
+                        <div class="slds-col slds-size_12-of-12 ">
+                                    <p class="slds-text-align_left alert-filtro"> 
+                                    <lightning-icon class="slds-m-around_x-small"
+                                    icon-name="utility:info" alternative-text="Información"
+                                    variant="inverse" title="Información"></lightning-icon>
+                                    Para visualizar las citas disponibles es necesario aplicar filtro de especialidad a tu búsqueda.
+                                </p>  
+                        </div>
+                    </div>
+                </template >
+                <template if:true={cargandoVisible}>
+                    <div class="slds-col slds-is-relative">
+                        <div class="spinner-container">
+                            <lightning-spinner alternative-text="Cargando" size="large" variant="brand"
+                                class="slds-var-m-around_xx-large">
+                            </lightning-spinner>
+                        </div>
+                    </div>
+                </template>
+                <!-- {tableVisible} -->
+                <template if:true={tableVisible}>
+                    <div style="overflow-x:auto;" class="slds-size_full">
+                        
+                        <br/>
+                    
+                        <table >
+                            <tr class=" notas-table-header ">
+                                <th class="notas-header-cell">Profesional</th>
+                                <th class="notas-header-cell">Fecha</th>
+                                <th class="notas-header-cell">Hora</th>
+                                <th class="notas-header-cell">Lugar</th>
+                                <!--<th class="notas-header-cell">Modalidad</th>-->
+                                <th class="notas-header-cell">Acción</th>
+                            </tr>
+                            <template for:each={listaCitas} for:item="registro" for:index="indice">
+                                <tr key={registro.Id}   >
+                                    <td key={registro.Id} class="notas-cell">
+                                        {registro.UQ_Name_Owner__c}
+                                    </td>
+                                    <td key={registro.UQ_Inicio_evento__c} class="notas-cell">
+                                        {registro.UQ_Fecha_Inicio__c}
+                                    </td>
+                                    <td key={registro.UQ_Fin_evento__c} class="notas-cell"> 
+                                        <lightning-formatted-time value={registro.UQ_Hora_Inicio__c}></lightning-formatted-time>                    
+                                        
+                                    </td>
+                                    <td key={registro.UQ_Fin_evento__c} class="notas-cell">                      
+                                        Bienestar Institucional
+                                    </td>
+                                    <!--<td key={registro.nSede} class="notas-cell">                      
+                                        {registro.idVirtualAttention}
+                                    </td>
+                                    <td key={registro.nSede} class="notas-cell">                      
+                                        {registro.nConsultorio}
+                                    </td>
+                                    <td key={registro.nSede} class="notas-cell">                      
+                                        {registro.fecha}
+                                    </td>
+                                    <td key={registro.nSede} class="notas-cell">                      
+                                        {registro.hora}
+                                    </td>-->
+                                    <td key={registro.nSede} class="notas-cell">
+                                            
+                                        <a onclick={hanledAgendarCita} data-key={registro.Id}>
+                                            <lightning-icon icon-name="utility:collection"
+                                            alternative-text="Agendar cita" 
+                                            title="Agendar cita" 
+                                            size="x-small"  >
+                                            </lightning-icon>
+                                            
+                                        </a>              
+                                        
+                                    </td>
+                                    
+                                </tr>       
+                            </template>
+                        </table>
+                    </div>
+
+                    <template  if:false={alertTableVacia}>
+                        <div class="slds-grid slds-gutters_x-small slds-grid_vertical-align-center">
+                            <p class="paginador-p">
+                                Página {paginaActual} de {paginasTotal}
+                            </p>
+                        </div>
+    
+                        <div class="slds-grid slds-gutters_x-small slds-grid_vertical-align-center">
+                            <lightning-button-icon icon-name="utility:jump_to_left"
+                                            alternative-text="jump_to_left" 
+                                            title="Inicio" 
+                                            size="x-small"
+                                            disabled={botonInicioVisible}
+                                            onclick={hanledInicio} >
+                                            </lightning-button-icon>
+                        
+    
+                            <lightning-button-icon icon-name="utility:chevronleft"
+                                            alternative-text="Atrás" 
+                                            title="Atrás" 
+                                            size="x-small"
+                                            disabled={botonAtrasVisible}
+                                            onclick={hanledAtras} >
+                                            </lightning-button-icon>
+    
+                            <lightning-button-icon icon-name="utility:chevronright"
+                                            alternative-text="Siguiente" 
+                                            title="Siguiente" 
+                                            size="x-small" 
+                                            disabled={botonSiguienteVisible}
+                                            onclick={hanledSiguiente}>
+                                            </lightning-button-icon>
+    
+                            <lightning-button-icon icon-name="utility:jump_to_right"
+                                            alternative-text="Fin" 
+                                            title="Fin" 
+                                            size="x-small"
+                                            disabled={botonFinVisible}
+                                            onclick={hanledFin} >
+                                            </lightning-button-icon>
+                        </div>
+                    </template>
+                </template> 
+                
+
+            </br>
+                <template  if:true={alertTableVacia}>
+                    <div class="slds-grid slds-gutters_x-small  slds-size_12-of-12 " >
+                        <div class="slds-col slds-size_1-of-1 slds-large_6-of-12" >
+                            <p class="slds-text-align_center alert-filtro" >
+                                <lightning-icon class="slds-m-around_x-small"
+                                icon-name="utility:info" alternative-text="Información"
+                                variant="inverse" title="Información"></lightning-icon>
+                                No se encontraron resultados. En este momento nuestra agenda está llena. Por favor consulta otra fecha.
+                            </p>
+                        </div>
+                    </div>
+                </template >
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para mostrar el cuestionario hbt_responder-cuestionario-triage
+    <template if:true={modalCuestionarioVisible}>
+        <c-hbt_responder-cuestionario-triage
+        oncerrarmodal={manejoCerrarModal} onatencionmedica={manejoAtencionMedica} onatencioncrisis={manejoAtencionCrisis} onatencionpsicologica={manejoAtencionPsicolo}>                           
+        </c-hbt_responder-cuestionario-triage> 
+    </template> -->
+
+    <!-- Modal para mostrar el cuestionario hbt_responder-cuestionario-triage
+    <template if:true={validarEncuestasP}>   
+        <c-hbt_validar-encuestas-satisfaccion-pendiente
+        oncerrarmodal={cerrarmodalValidacionEncuesta} >                           
+        </c-hbt_validar-encuestas-satisfaccion-pendiente> 
+    </template> -->
+
+
+</template>

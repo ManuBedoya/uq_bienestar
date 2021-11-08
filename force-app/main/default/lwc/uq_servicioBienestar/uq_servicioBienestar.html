@@ -1,0 +1,35 @@
+<template>
+    <a href='' onclick={handleSelection}>
+        <div class="slds-card card">
+            <div class="slds-grid slds-wrap slds-grid_align-center slds-grid_vertical-align-center slds-show_large">
+                <div class="slds-col slds-grow-none slds-p-around--none servicio-icon slds-m-bottom_large ">
+                    <div class="slds-icon slds-m-around_large svg-icon">
+                        <lightning-icon icon-name={imagenformula} size="large" alternative-text="Utility image" title="image"></lightning-icon>
+                    </div>
+                    <!-- date_time "utility:record_update"
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols"></use>
+                    <lightning-icon icon-name="standard:article" alternative-text="Approved" title="Approved"></lightning-icon>
+                    -->
+                </div>
+                <div class="slds-col slds-size_full servicio-label">
+                    {name}
+                </div>
+            </div>
+            <div class="slds-grid slds-grid_align-start slds-grid_vertical-align-center slds-hide_large">
+                <div class="slds-col slds-grow-none slds-p-around--none servicio-icon slds-show_medium slds-m-right_medium">
+                    <svg class="slds-icon slds-m-around_large svg-icon" xmlns="http://www.w3.org/2000/svg">;
+                        <use xlink:href={imageSVGURL}></use>
+                    </svg> 
+                </div>
+                <div class="slds-col slds-grow-none slds-p-around--none servicio-icon slds-hide_medium slds-m-right_medium">
+                    <svg class="slds-icon slds-m-around_large svg-icon" xmlns="http://www.w3.org/2000/svg">;
+                        <use xlink:href={imageSVGURL}></use>
+                    </svg> 
+                </div>
+                <div class="slds-col slds-grow-none servicio-label">
+                    {name}
+                </div>
+            </div>
+        </div>
+    </a>
+</template>

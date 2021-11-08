@@ -1,0 +1,92 @@
+.card {
+    margin: auto;
+    border: 1px solid #dddbda;
+    opacity: 1;
+    border-bottom: 5px solid #132275;
+    max-width: 500px;
+    min-width: 240px;
+  }
+  .slds-grid {
+    display: flex;
+    justify-content: center;
+  }
+  .button-classes {
+    width: 150px;
+    height: 55px;
+  }
+  
+  .h-100 {
+    height: 100%;
+  }
+  
+  .oferta-label {
+    font: normal normal normal 40px/20px Nunito;
+    letter-spacing: 0px;
+    color: #132275;
+    opacity: 1;
+    text-align: center;
+    line-height: normal;
+  }
+  
+  .oferta-icon {
+    height: 180px;
+    background-image: url("/sfsites/c/resource/CommunityServicioDeportes/deporte_gimnasio.png");
+    background-position: left;
+    background-position-y: top;
+    border-radius: 5px 5px 0px 0px;
+    opacity: 1;
+  }
+  
+  .oferta-dato {
+    text-align: left;
+    font: normal normal normal 13px/16px Nunito;
+    letter-spacing: 0px;
+    color: #706f6e;
+    opacity: 1;
+  }
+  
+  .oferta-button {
+    text-align: center;
+  }
+  
+  .svg-icon {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .svg-icon-lugar {
+    width: 12px;
+    height: 17px;
+  }
+  
+  .btn-ver-detalle {
+    width: 100%;
+    height: 55px;
+    text-align: center;
+    font: normal normal bold 11px/28px Nunito;
+    letter-spacing: 0px;
+    color: #ffffff;
+    opacity: 1;
+  }
+  
+  lightning-button {
+    font-size: x-small;
+  }
+  
+  @media (max-width: 480px) {
+    .oferta-label {
+      font: normal normal normal 24px "Nunito";
+    }
+  }
+  
+  .btn-inscripcion {
+    text-align: center;
+    font: normal normal bold 11px/28px Nunito;
+    letter-spacing: 0px;
+    color: #ffffff;
+    opacity: 1;
+  }
+  
+  .col {
+    padding: 0 50px;
+  }

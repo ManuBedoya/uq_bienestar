@@ -1,0 +1,73 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-11-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   04-21-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+-->
+<template>
+    <div class="slds-card card">
+        <div class="slds-grid slds-grid_vertical"><!-- 
+            <div class="slds-col slds-size_full descripcion-servicio-header">
+                <div class="slds-grid slds-grid_vertical-align-center">
+                    <div
+                        class="slds-col slds-grow-none descripcion-servicio-icon slds-p-around--none slds-var-m-right_medium">
+                        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg">;
+                            <use xlink:href={imageFullURL}></use>
+                        </svg>
+                    </div>
+                    <div class="slds-col descripcion-servicio-label">
+                        Ofertas de servicios DMU
+                    </div>
+                </div>
+            </div>
+                       <template if:true={error}>
+                <div class="slds-col slds-p-around_large">
+                    <c-hbt_error-g-c error={informacionError}></c-hbt_error-g-c>
+                </div>
+            </template>-->
+
+            <template if:true={cargando}>
+                <div class="slds-col slds-is-relative">
+                    <div class="spinner-container">
+                        <lightning-spinner alternative-text="Cargando" size="large" variant="brand"
+                            class="slds-var-m-around_xx-large">
+                        </lightning-spinner>
+                    </div>
+                </div>
+            </template>
+
+            <template if:true={conOfertas}>
+                <div class="slds-col slds-m-vertical_small">
+                    <div class="slds-grid slds-wrap slds-gutters_medium slds-grid_vertical-stretch" style="justify-content: space-evenly;">
+                        <!--
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-m-vertical_small"> 
+                        </div> --> 
+                        <div class="h-100">
+                            <!-- c-hbt_oferta-d-m-u --> 
+                            <c-uq_servicio-bienestar 
+                                name = {nombrePrimerComponente}
+                                api-name = {redirectPrimerComponente_api}
+                                image-s-v-g-id = {imagenPrimerSVG_api}
+                               >
+                            </c-uq_servicio-bienestar >
+                        </div>
+
+                        <div class="h-100">
+                            <!-- c-hbt_oferta-d-m-u --> 
+                            <c-uq_servicio-bienestar 
+                                name = {nombreSegundoComponente}
+                                api-name = {redirectSegundoComponente_api}
+                                image-s-v-g-id = {imagenSegundoSVG_api}
+                               >
+                            </c-uq_servicio-bienestar >
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

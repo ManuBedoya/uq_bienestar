@@ -1,0 +1,30 @@
+.card {
+	background: #fff 0% 0% no-repeat padding-box;
+	box-shadow: 0px 2px 5px #00000029;
+	border-radius: 4px;
+	margin: auto;
+	max-width: var(--craiMaxWidth);
+	padding: 2vw;
+}
+
+.servicio-label {
+	color: #706f6e;
+	font: normal normal normal 23px "Nunito";
+	text-align: center;
+}
+
+.servicio-icon {
+	background-color: #132275;
+	border-radius: 4px;
+}
+
+.svg-icon {
+	width: 57px;
+	height: 55px;
+}
+
+@media (max-width: 480px) {
+	.servicio-label {
+		font: normal normal normal 24px "Nunito";
+	}
+}

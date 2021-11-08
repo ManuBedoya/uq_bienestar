@@ -1,0 +1,115 @@
+<template>
+    <div class="slds-card card">
+      <div class="slds-grid slds-grid_vertical h-100">
+        <div class="slds-col slds-size_full oferta-icon slds-m-bottom_small">
+          <!--  aqui-->
+        </div>
+  
+        <div class="slds-col h-100" style="padding-top: 20px">
+          <div
+            class="
+              slds-grid
+              slds-size_full
+              slds-grid_vertical slds-grid_vertical-stretch
+              h-100
+            "
+          >
+            <!--  aqui-->
+  
+            <div class="slds-col slds-p-bottom_small oferta-label">
+              {labelGimnasio}
+            </div>
+  
+            <div class="slds-col slds-m-vertical_medium slds-p-around--none">
+              <div
+                class="slds-grid slds-grid_vertical-stretch"
+                style="justify-content: space-around; align-items: center"
+              >
+                <!--  inicio boton inscribirme-->
+                <div class="slds-col slds-size_9-of-12 col">
+                  <button
+                    class="slds-button slds-button_brand btn-ver-detalle"
+                    onclick={handleFormularioGym}
+                  >
+                    IR ALLÁ
+                  </button>
+                </div>
+                <div class="slds-col slds-size_1-of-12">
+                    <!--
+                  <c-hbt_compartir-oferta-redes
+                    id-oferta={idOferta}
+                    is-gym={isGym}
+                    open-modal={manejoRedSocial}
+                  >
+                  </c-hbt_compartir-oferta-redes> -->
+
+                </div>
+                <div class="slds-col slds-size_1-of-12"></div>
+                <!--
+                <template if:true={interno}>
+                  
+                  <div class=" slds-col slds-size_5-of-12 slds-p-around--none btn-ver-detalle " >
+                    <button
+                      class="slds-button slds-button_brand btn-ver-detalle"
+                      onclick={handleFormularioGym} >
+                      IR ALLÁ 
+                    </button>
+                  </div>
+                </template>
+  
+                <template if:true={externo}>
+  
+                  <div class=" slds-col slds-size_5-of-12 slds-p-around--none btn-ver-detalle " >
+                    <button
+                      class="slds-button slds-button_brand btn-ver-detalle"
+                      onclick={handleFormularioGym} >
+                      IR ALLÁ 
+                    </button>
+                  </div>
+  
+                  
+                </template>
+  
+                
+                <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12 center-btn" >
+                  <div class="slds-grid slds-gutters slds-p-top_medium">
+                    <div class="slds-col">
+                      <lightning-button variant="brand" label="IR ALLA"
+                        title="Primary action with lighter look"
+                        onclick={handleFormularioGym}
+                      >
+                      </lightning-button>
+                    </div>
+  
+                    <div class="slds-col">
+                      <lightning-button variant="brand-outline" label="Subir Consentimiento" 
+                      title="Primary action with lighter look" onclick={abrirModalCargueArchivo} >
+                      </lightning-button>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <lightning-button class="slds-m-left_x-small" variant="brand"
+                      title="SUBIR ARCHIVO" label="SUBIR ARCHIVO"
+                      onclick={abrirModalCargueArchivo}>
+                  </lightning-button>
+                </div>-->
+              </div>
+            </div>
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 
+    <template if:true={modalAbierto}>
+      <c-hbt_confirmacion-compartir-redes
+        red-social={redSocial}
+        id-oferta={idOferta}
+        oncerrarmodal={manejoCerrarModal}
+        onregistro={manejoCompartir}
+      >
+      </c-hbt_confirmacion-compartir-redes>
+    </template> -->
+
+  </template>

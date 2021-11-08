@@ -1,0 +1,105 @@
+.spinner-container {
+    height: 200px;
+}
+
+.card {
+    background: #FFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 2px 5px #00000029;
+    border-radius: 4px;
+    padding: 2vw;
+}
+
+.error-contenedor{
+    margin: auto;
+}
+
+.error-titulo {
+    color: #C23934;
+    text-align: center;
+    font: normal normal 600 24px/32px 'Nunito';
+}
+
+.error-mensaje{
+    color: #C23934;
+}
+
+.descripcion-servicio-header {
+    border-bottom: 3px solid #01A0A4;
+}
+
+.descripcion-servicio-icon {
+    background-color: #01A0A4;
+    border-radius: 4px;
+    width: 50px;
+    height: 50px;
+}
+
+.descripcion-servicio-label {
+    text-align: left;
+    font: normal normal 600 24px/32px Nunito;
+    letter-spacing: 0px;
+    color: #132275;
+    opacity: 1;
+}
+
+.descripcion-servicio-contenido {
+    text-align: left;
+    font: normal normal normal 16px/22px Nunito;
+    letter-spacing: 0px;
+    color: #706F6E;
+    opacity: 1;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.descripcion-servicio-imagen{
+    /*background: transparent url('/sfsites/c/resource/CommunityServiciosDMU/MEDICINA.jpg') 0% 0% no-repeat padding-box;
+    opacity: 1;*/
+    width: 790px;
+    height: 304px;
+}
+
+
+
+.container-full-size {
+    height: 100%;
+    width: 100%;
+}
+
+.svg-icon{
+    width : 32px;
+    height : 32px;
+    margin: 8.64px;
+
+}
+
+.h-100{
+    height: 100%;
+}
+
+.dato-paginador{
+    text-align: left;
+    font: normal normal normal 14px/19px 'Nunito SemiBold';
+    letter-spacing: 0px;
+    color: #6D7785;
+    opacity: 1;
+}
+
+.marco-paginador{
+    background: #FFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 2px 5px #00113C38;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer; 
+}
+
+@media (max-width: 728px) {
+    .descripcion-servicio-label {
+        font: normal normal 600 18px 'Nunito SemiBold';
+    }    
+}
+
+@font-face {
+    font-family: 'Nunito Light Italic';
+    src: url('/sfsites/c/resource/Font_Nunito/Nunito-LightItalic.ttf') format('truetype');
+}

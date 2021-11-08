@@ -1,0 +1,246 @@
+.card {
+    background: #FFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 2px 5px #00000029;
+    border-radius: 4px;
+    opacity: 1;
+}
+
+.div_boton{
+    justify-content: flex-end;
+}
+
+.botonesCyE{
+    width:20 px; 
+    border: 1px solid black;
+    height: 3rem;
+    font: normal normal 600 15px 'Nunito SemiBold';
+}
+
+.spinner-container {
+    background-color: whitesmoke;
+    height: 500px;
+}
+
+.navbar-title {
+    text-align: left;
+    font: normal normal 600 24px 'Nunito SemiBold';
+    letter-spacing: 0px;
+    color: #132275;
+}
+
+.section-title {
+    text-align: center;
+    font: normal normal 18px 'Nunito Bold';
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    background-color: #CE0019;
+}
+
+.nav-vertical-action {
+    text-align: right;
+    font: normal normal normal 14px 'Nunito';
+    color: #706F6E;
+    padding-right: 0px;
+}
+
+.program-header {
+    border-left: 3px solid #CE0019;
+}
+
+.program-title {
+    text-align: left;
+    font: normal normal bold 22px 'Nunito Bold';
+    letter-spacing: 0px;
+    color: #132275;
+}
+
+.program-subtitle {
+    text-align: left;
+    font: normal normal normal 14px 'Nunito';
+    color: #132275;
+}
+
+.notas-header, .notas-parciales-header {
+    border-bottom: 3px solid #01A0A4;
+}
+
+.notas-icon, .notas-parciales-icon {
+    background-color: #01A0A4;
+    border-radius: 4px;
+}
+
+.notas-label, .notas-parciales-label {
+    text-align: left;
+    font: normal normal 600 20px 'Nunito SemiBold';
+    color: #132275;
+}
+
+.notas-table-header {
+    background: #1322751A;
+}
+
+.notas-header-cell-left {
+    text-align: left;
+    font: normal normal bold 14px 'Nunito Bold';
+    color: #132275;
+}
+
+.notas-header-cell {
+    text-align: center;
+    font: normal normal bold 14px 'Nunito Bold';
+    color: #132275;
+}
+
+.notas-cell {
+    text-align: center;
+    font: normal normal normal 14px 'Nunito';
+    color: #706F6E;
+}
+
+.notas-cell-left {
+    text-align: left;
+    font: normal normal normal 14px 'Nunito';
+    color: #706F6E;
+}
+
+.notas-resumen-container {
+    border-left: 20px solid #132275;
+    background-color: #1322751A;
+    border-radius: 15px;
+}
+
+.item-resumen-valor {
+    text-align: left;
+    font: normal normal bold 20px 'Nunito Bold';
+    color: #132275;
+}
+
+.item-resumen-label {
+    text-align: left;
+    font: normal normal normal 12px 'Nunito';
+    color: #706F6E;
+}
+
+.slds-badge {
+    text-align: center;
+    font: normal normal normal 14px 'Nunito';
+}
+
+.error-titulo {
+    color: #C23934;
+    text-align: center;
+    font: normal normal 600 24px/32px 'Nunito';
+}
+
+.error-mensaje {
+    color: #C23934;
+}
+
+.error-contenedor {
+    margin: auto;
+}
+
+.alert-filtro{
+    background-color: gray; 
+    color:white; 
+    padding-left: 20px;
+}
+
+@font-face {
+    font-family: 'Nunito SemiBold';
+    src: url('/sfsites/c/resource/Font_Nunito/Nunito-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Nunito Bold';
+    src: url('/sfsites/c/resource/Font_Nunito/Nunito-Bold.ttf') format('truetype');
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even){background-color: #f2f2f2}
+
+  .irAtras-icn{
+    --sds-c-icon-color-foreground: black;
+    padding: 10px;
+  }
+
+  .div-icn-atras{
+    display: flex; 
+    /*background: black; */
+    align-items: center;
+    width: 15%;
+  }
+
+  
+  
+  .div-icn-citasAgendadas{
+    display: flex; 
+    /*background: black; */
+    align-items: center;
+    width: 40%;
+  }
+
+  .div-icn-citasAgendadas:hover {
+    color: black;
+    /*-webkit-box-shadow: 0 4px 0px 1px  #01A0A4;
+    /* box-shadow: 0 4px 0px 1px  #01A0A4; color del boton mas solido */
+    -webkit-shadow: 0 4px 5px 1px  #01A0A4;
+    -moz-transform: translateX(0px) translateY(-5px);
+    -webkit-transform: translateX(0px) translateY(-5px);
+    -o-transform: translateX(0px) translateY(-5px);
+    -ms-transform: translateX(0px) translateY(-5px);
+    transform: translateX(0px) translateY(-5px);
+    }
+
+  .div-icn-atras:hover {
+    color: black;
+    /*-webkit-box-shadow: 0 4px 0px 1px  #01A0A4;
+    /* box-shadow: 0 4px 0px 1px  #01A0A4; color del boton mas solido */
+    -webkit-shadow: 0 4px 5px 1px  #01A0A4;
+    -moz-transform: translateX(0px) translateY(-5px);
+    -webkit-transform: translateX(0px) translateY(-5px);
+    -o-transform: translateX(0px) translateY(-5px);
+    -ms-transform: translateX(0px) translateY(-5px);
+    transform: translateX(0px) translateY(-5px);
+    }
+
+    .Atras-p{
+    font: normal normal normal 20px 'Nunito';
+    }
+
+    .paginador-p{
+        font: normal normal normal 12px 'Nunito';
+        margin-top: 10px;
+    }
+
+    .consultar-btn{
+        padding: 15px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .div-icn-citasAgendadas{
+            display: flex; 
+            /*background: black;*/ 
+            width: 100%;
+            align-items: center;
+            
+        }
+
+        .div-icn-atras{
+            display: flex; 
+            /*background: black; */
+            align-items: center;
+            width: 100%;
+          }
+      }
